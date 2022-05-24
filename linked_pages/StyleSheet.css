@@ -25,14 +25,15 @@ html, body {
   content: "";
   display: table;
   clear: both;
-  padding: 5px;
+  padding: 1px;
 }
 
 h2 {
-  color: black
+  color: black;
   opacity: 0.4;
   filter: alpha(opacity=40); /* msie */
 }
+
 h2:hover {
   color: gold;
 }
@@ -160,4 +161,10 @@ h2:hover {
 
 .imagecover {
   object-fit: cover;
+}
+
+a:link {
+  color: lightgray;
+  background-color: transparent;
+  text-decoration: none;
 }
