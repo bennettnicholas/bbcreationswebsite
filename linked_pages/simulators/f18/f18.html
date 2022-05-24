@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <title>Hobbies</title>
+    <meta name="viewport" content="initial-scale=1.0">
+    <meta charset="utf-8">
+    <link href="../../StyleSheet.css" rel="stylesheet" type="text/css">
+  </head>
+
+  <body background="../../../photos/boom.jpg">
+
+    <div class="topnav">
+      <a class="active" href="../../../index.html">Home</a>
+    </div>
+
+    <div class = "row">
+      <h1><font color="darkred">Welcome to BB Creations. Please keep in mind the website is in progress. As our projects and products grow, so will this page.</font></h1> </div>
+    </div>
+
+    <div class = "row">
+      <div class = "columnmain" > 
+        <img class="mySlides" src="../../../photos/ddi1.jpg" height="100%" width="100%">
+        <img class="mySlides" src="../../../photos/ddi2.jpg" height="100%" width="100%">
+        <button class="w3-button w3-display-left" onclick="plusDivs(-1)">&#10094;</button>
+        <button class="w3-button w3-display-right" onclick="plusDivs(+1)">&#10095;</button>
+      </div>
+      <div class="columnmain">
+        <div class = "row">
+          <h1><font color="white">F18 MFD</h1></font>
+        </div>
+        <div class = "row">
+          <h3><font color="white">Hello World</h3></font>
+        </div>
+      </div>
+    </div>
+    
+    <script>
+      var slideIndex = 1;
+      showDivs(slideIndex);
+
+      function plusDivs(n) {
+        showDivs(slideIndex += n);
+      }
+
+      function showDivs(n) {
+        var i;
+        var x = document.getElementsByClassName("mySlides");
+        if (n > x.length) {slideIndex = 1}
+        if (n < 1) {slideIndex = x.length} ;
+        for (i = 0; i < x.length; i++) {
+          x[i].style.display = "none";
+        }
+        x[slideIndex-1].style.display = "block";
+      }
+    </script>
+
+
+  </body>
+</html>

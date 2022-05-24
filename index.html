@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <title>BB Creations</title>
+    <meta name="viewport" content="initial-scale=1.0">
+    <meta charset="utf-8">
+    <link href="https://fonts.googleapis.com/css?family=Arvo&display=swap" rel="stylesheet">
+    <link href="assets/css/StyleSheet.css" rel="stylesheet" type="text/css">
+  </head>
+
+  <body background="photos/boom.jpg">
+    
+    <div class="topnav">
+      <a class="active" href="./index.html">Home</a>
+      <a href="./linked_pages/simulators/f18/f18.html">F-18 DDI</a>
+    </div>
+    <div class = "row">
+      <h1><font color ="darkred"> Welcome to BB Creations. Please keep in mind the website is in progress. As our projects and products grow, so will this page.</font></h1>
+    </div>
+    <div class = "row">
+      <div class="columnmain"> <h3>Welcome to BB Creations. Use the toolbar on the top to navigate to different projects and products. Follow the instructions on those products if you would like to buy something.</h3>
+      </div>
+    </div>
+    
+    <script>
+      let url_yellow = "http://maps.google.com/mapfiles/ms/icons/";
+      url_yellow += "yellow" + "-dot.png";
+
+      let url_green = "http://maps.google.com/mapfiles/ms/icons/";
+      url_green += "green" + "-dot.png";
+
+      let url_purple = "http://maps.google.com/mapfiles/ms/icons/";
+      url_purple += "purple" + "-dot.png";
+
+
+      var map;
+      function initMap() {
+
+        //locations
+        var home_location = {lat: 44.519269, lng: -93.24849};
+        var school_location = {lat: 44.0743, lng: -103.2059};
+        var collins_location = {lat: 42.012156, lng: -91.646986};
+        var nucor_location = {lat: 42.069216, lng: -97.367723};
+        var bobcat_location = {lat: 46.800393, lng: -100.756208};
+        var garmin_location = {lat: 38.86076, lng: -94.80567};
+        var protech_location = {lat: 46.87084, lng: -96.80929};
+        
+        // center the map
+        map = new google.maps.Map(document.getElementById('map'), {
+          center: {lat: 44.381266, lng: -97.922211},
+          zoom: 5
+        });
+
+        // markers for each locations
+        var home_marker = new google.maps.Marker({
+          position: home_location,
+          map: map,
+          icon: {                             
+            url: "http://maps.google.com/mapfiles/ms/icons/green-dot.png"   
+          }
+        });
+        var school_marker = new google.maps.Marker({
+          position: school_location,
+          map: map,
+          icon: {                             
+            url: "http://maps.google.com/mapfiles/ms/icons/blue-dot.png"   
+          }
+        });
+        var collins_marker = new google.maps.Marker({
+          position: collins_location,
+          map: map,
+          icon: {                             
+            url: "http://maps.google.com/mapfiles/ms/icons/purple-dot.png"   
+          }
+        });
+        var nucor_marker = new google.maps.Marker({
+          position: nucor_location,
+          map: map,
+          icon: {                             
+            url: "http://maps.google.com/mapfiles/ms/icons/red-dot.png"   
+          }
+        });
+        var bobcat_marker = new google.maps.Marker({
+          position: bobcat_location,
+          map: map,
+          icon: {                             
+            url: "http://maps.google.com/mapfiles/ms/icons/red-dot.png"   
+          }
+        });
+        var garmin_marker = new google.maps.Marker({
+          position: garmin_location,
+          map: map,
+          icon: {                             
+            url: "http://maps.google.com/mapfiles/ms/icons/red-dot.png"   
+          }
+        });
+        var protech_marker = new google.maps.Marker({
+          position: protech_location,
+          map: map,
+          icon: {                             
+            url: "http://maps.google.com/mapfiles/ms/icons/red-dot.png"   
+          }
+        });
+        
+        // comments for the markers once clicked
+        var home_comment = new google.maps.InfoWindow({
+        content: "<span>Home</span>"
+        })
+        var school_comment = new google.maps.InfoWindow({
+        content: '<a href="linked_pages/sdsmt/sdsmt.html" class="button">SDSMT</a>' +
+         "<span> || Computer Engineering || 2016-2021 || 3.85 GPA || Senior Design Program Manager</span>"
+        })
+        var collins_comment = new google.maps.InfoWindow({
+        content: '<a href="linked_pages/collins/collins2019.html" class="button">Software Engineering Co-op</a>' + 
+        "<span> || May 2019 - Dec 2019 || Jan 2021 - Current || Collins Aerospace ***Current Location*** </span>"
+        })
+        var nucor_comment = new google.maps.InfoWindow({
+        content: '<a href="linked_pages/nucor/nucor.html" class="button">Electrical/Computer Engineering Intern</a>' +
+         "<span> || May 2018 - Aug 2018 || Nucor Steel</span>" 
+        })
+        var bobcat_comment = new google.maps.InfoWindow({
+        content: '<a href="linked_pages/bobcat/bobcat.html" class="button">Information Technology Co-op</a>' + 
+        "<span> || May 2017 - Dec 2017 || Doosan Bobcat</span>"
+        })
+        var current_comment = new google.maps.InfoWindow({
+        content: "<span>I am Here :)</span>"
+        })
+        var protech_comment = new google.maps.InfoWindow({
+        content: '<a href="linked_pages/protech/protech.html" class="button">Software Engineering Intern</a>' + 
+        "<span> || June 2020 - Aug 2020 || Provender Technologies</span>"
+        })
+        var garmin_comment = new google.maps.InfoWindow({
+        content: '<a href="linked_pages/garmin/garmin.html" class="button">Software Engineering Intern</a>' + 
+        "<span> || CANCELLED (COVID-19) || Garmin</span>"
+        })
+        
+
+        google.maps.event.addListener(home_marker, 'click', function() {
+        home_comment.open(map,home_marker);
+        });
+        google.maps.event.addListener(school_marker, 'click', function() {
+        school_comment.open(map,school_marker);
+        });
+        google.maps.event.addListener(protech_marker, 'click', function() {
+        protech_comment.open(map,protech_marker);
+        });
+        google.maps.event.addListener(garmin_marker, 'click', function() {
+        garmin_comment.open(map,garmin_marker);
+        });
+        google.maps.event.addListener(collins_marker, 'click', function() {
+        collins_comment.open(map,collins_marker);
+        });
+        google.maps.event.addListener(nucor_marker, 'click', function() {
+        nucor_comment.open(map,nucor_marker);
+        });
+        google.maps.event.addListener(bobcat_marker, 'click', function() {
+        bobcat_comment.open(map,bobcat_marker);
+        });
+        google.maps.event.addListener(curent_marker, 'click', function() {
+        current_comment.open(map,curent_marker);
+        });
+        
+        
+      }
+      
+    </script>
+
+    <script type="text/javascript">
+      app.get('/login', function(req, res) {
+        var scopes = 'user-read-private user-read-email';
+        res.redirect('https://accounts.spotify.com/authorize' +
+          '?response_type=code' +
+          '&client_id=' + my_client_id +
+          (scopes ? '&scope=' + encodeURIComponent(scopes) : '') +
+          '&redirect_uri=' + encodeURIComponent(redirect_uri));
+        });
+
+    </script>
+
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDyl0sGwn3j9j-dUiCDZWu3NLq7qObBrhE&callback=initMap"
+    async defer></script>
+  </body>
+</html>
